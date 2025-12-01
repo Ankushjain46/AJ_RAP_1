@@ -1,0 +1,44 @@
+managed; //implementation in class zbp_i_travel_ank unique;
+strict ( 2 );
+
+define behavior for YI_TRAVEL_ANK //alias <alias_name>
+implementation in class zcl_bp_travel_ank unique
+persistent table ytravel_ma
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+//  field ( readonly ) TravelId;
+  association _Booking { create; }
+}
+
+define behavior for YI_BOOKING_ANK //alias <alias_name>
+implementation in class zcl_bp_booking_ank unique
+persistent table ybooking_ma
+lock dependent by _Travel
+authorization dependent by _Travel
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) TravelId;
+  association _Travel;
+  association _BookingSupplyment { create; }
+}
+
+define behavior for YI_BOOKSUPPL_ANK //alias <alias_name>
+implementation in class zcl_bp_bookingsuppl_ank unique
+persistent table ybooksuppl_ma
+lock dependent by _Travel
+authorization dependent by _Travel
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) TravelId, BookingId, BookingSupplementId;
+  association _Travel;
+  association _Booking;
+}

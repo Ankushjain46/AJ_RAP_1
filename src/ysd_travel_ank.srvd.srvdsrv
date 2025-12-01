@@ -1,0 +1,6 @@
+@EndUserText.label: 'Servive defination for YC_TRAVEL_MA'
+define service YSD_TRAVEL_ANK {
+  expose YC_TRAVEL_ANK;
+  expose YC_BOOKING_ANK;
+  expose YC_BOOKSUPPL_ANK;
+}
