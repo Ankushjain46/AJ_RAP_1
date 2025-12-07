@@ -38,7 +38,7 @@ annotate entity YC_BOOKING_ANK with
   @Consumption.valueHelpDefinition: [{
       entity: {
           name: '/DMO/I_Customer',
-          element: 'CustomerId' }
+          element: 'CustomerID' }
        }]
   CustomerId;
   @UI.lineItem: [{ position: 40 }]
@@ -46,7 +46,7 @@ annotate entity YC_BOOKING_ANK with
   @Consumption.valueHelpDefinition: [{
       entity: {
           name: '/DMO/I_Carrier',
-          element: 'AirlineId' }
+          element: 'AirlineID' }
       }]
   CarrierId;
   @UI.lineItem: [{ position: 50 }]
@@ -54,7 +54,7 @@ annotate entity YC_BOOKING_ANK with
   @Consumption.valueHelpDefinition: [{
     entity: {
         name: '/DMO/I_Flight',
-        element: 'ConnectionId' },
+        element: 'ConnectionID' },
         additionalBinding: [{
                         localElement: 'ConnectionId',
                         element: 'ConnectionID'

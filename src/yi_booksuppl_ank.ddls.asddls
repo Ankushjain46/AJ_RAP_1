@@ -22,6 +22,8 @@ define view entity YI_BOOKSUPPL_ANK
       @Semantics.amount.currencyCode: 'CurrencyCode'
       price                 as Price,
       currency_code         as CurrencyCode,
+      //etag field
+      @Semantics.systemDateTime.localInstanceLastChangedAt: true
       last_changed_at       as LastChangedAt,
       _Booking,
       _Travel,

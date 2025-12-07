@@ -28,6 +28,8 @@ define view entity YI_BOOKING_ANK
       flight_price    as FlightPrice,
       currency_code   as CurrencyCode,
       booking_status  as BookingStatus,
+      //etag field
+      @Semantics.systemDateTime.localInstanceLastChangedAt: true
       last_changed_at as LastChangedAt,
       _Travel,
       _BookingSupplyment,
